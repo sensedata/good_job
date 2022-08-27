@@ -158,7 +158,7 @@ module GoodJob
         require RAILS_ENVIRONMENT_RB
         return unless GoodJob::CLI.log_to_stdout? && !ActiveSupport::Logger.logger_outputs_to?(GoodJob.logger, $stdout)
 
-        GoodJob::LogSubscriber.loggers << ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new($stdout))
+        # GoodJob::LogSubscriber.loggers << ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new($stdout))
         GoodJob::LogSubscriber.reset_logger
       end
     end
