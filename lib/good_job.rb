@@ -57,7 +57,7 @@ module GoodJob
   #   By default, GoodJob deletes job records after the job is completed successfully.
   #   If you want to preserve jobs for latter inspection, set this to +true+.
   #   If you want to preserve only jobs that finished with error for latter inspection, set this to +:on_unhandled_error+.
-  #   @return [Boolean, nil]
+  #   @return [Boolean, Symbol, nil]
   mattr_accessor :preserve_job_records, default: true
 
   # @!attribute [rw] retry_on_unhandled_error
@@ -157,7 +157,7 @@ module GoodJob
 
     ActiveSupport::Notifications.instrument("cleanup_preserved_jobs.good_job", { older_than: older_than, timestamp: timestamp }) do |payload|
       old_jobs = GoodJob::Job.where('finished_at <= ?', timestamp)
-      old_jobs = old_jobs.not_discarded unless include_discarded
+      old_jobs = old_jobs.succeeded unless include_discarded
       old_jobs_count = old_jobs.count
 
       GoodJob::Execution.where(job: old_jobs).delete_all

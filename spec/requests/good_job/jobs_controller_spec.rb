@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe GoodJob::JobsController, type: :request do
+describe GoodJob::JobsController do
   around do |example|
     orig_value = ActionController::Base.allow_forgery_protection
     ActionController::Base.allow_forgery_protection = false
@@ -145,7 +145,7 @@ describe GoodJob::JobsController, type: :request do
         put good_job.mass_update_jobs_path, params: {
           mass_action: 'discard',
           all_job_ids: 1,
-          state: 'finished',
+          state: 'succeeded',
         }
 
         expect(response).to have_http_status(:found)

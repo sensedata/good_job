@@ -1,5 +1,62 @@
 # Changelog
 
+## [v3.6.0](https://github.com/bensheldon/good_job/tree/v3.6.0) (2022-10-22)
+
+[Full Changelog](https://github.com/bensheldon/good_job/compare/v3.5.1...v3.6.0)
+
+**Fixed bugs:**
+
+- 3.4.8 release breaks job retrying [\#728](https://github.com/bensheldon/good_job/issues/728)
+
+**Merged pull requests:**
+
+- Redo: When not preserving job records, ensure all prior executions are deleted after successful retry [\#730](https://github.com/bensheldon/good_job/pull/730) ([bensheldon](https://github.com/bensheldon))
+- Add configurable limit \(`queue_select_limit`\) when querying candidate jobs [\#727](https://github.com/bensheldon/good_job/pull/727) ([mitchellhenke](https://github.com/mitchellhenke))
+- Add index to `good_jobs` to improve querying candidate jobs [\#726](https://github.com/bensheldon/good_job/pull/726) ([mitchellhenke](https://github.com/mitchellhenke))
+
+## [v3.5.1](https://github.com/bensheldon/good_job/tree/v3.5.1) (2022-10-20)
+
+[Full Changelog](https://github.com/bensheldon/good_job/compare/v3.5.0...v3.5.1)
+
+**Closed issues:**
+
+- Assert cancelled jobs [\#724](https://github.com/bensheldon/good_job/issues/724)
+
+**Merged pull requests:**
+
+- Revert "When not preserving job records, ensure all prior executions are deleted after successful retry" because some retry patterns stopped working [\#729](https://github.com/bensheldon/good_job/pull/729) ([bensheldon](https://github.com/bensheldon))
+
+## [v3.5.0](https://github.com/bensheldon/good_job/tree/v3.5.0) (2022-10-18)
+
+[Full Changelog](https://github.com/bensheldon/good_job/compare/v3.4.8...v3.5.0)
+
+**Merged pull requests:**
+
+- Fix flaky test for `Scheduler#cleanup_interval_jobs` [\#723](https://github.com/bensheldon/good_job/pull/723) ([bensheldon](https://github.com/bensheldon))
+- Pin development Puma version until Capybara is compatible [\#722](https://github.com/bensheldon/good_job/pull/722) ([bensheldon](https://github.com/bensheldon))
+- Rename Job status of `finished` to `succeeded`; `finished` now means either `succeeded` or `discarded` [\#721](https://github.com/bensheldon/good_job/pull/721) ([bensheldon](https://github.com/bensheldon))
+
+## [v3.4.8](https://github.com/bensheldon/good_job/tree/v3.4.8) (2022-10-11)
+
+[Full Changelog](https://github.com/bensheldon/good_job/compare/v3.4.7...v3.4.8)
+
+**Merged pull requests:**
+
+- When not preserving job records, ensure all prior executions are deleted after successful retry [\#719](https://github.com/bensheldon/good_job/pull/719) ([ylansegal](https://github.com/ylansegal))
+
+## [v3.4.7](https://github.com/bensheldon/good_job/tree/v3.4.7) (2022-10-06)
+
+[Full Changelog](https://github.com/bensheldon/good_job/compare/v3.4.6...v3.4.7)
+
+**Closed issues:**
+
+- Changing assets path? [\#717](https://github.com/bensheldon/good_job/issues/717)
+- Support Sequel [\#713](https://github.com/bensheldon/good_job/issues/713)
+
+**Merged pull requests:**
+
+- Update bootstrap to latest 5.2.2 [\#718](https://github.com/bensheldon/good_job/pull/718) ([morgoth](https://github.com/morgoth))
+
 ## [v3.4.6](https://github.com/bensheldon/good_job/tree/v3.4.6) (2022-09-26)
 
 [Full Changelog](https://github.com/bensheldon/good_job/compare/v3.4.5...v3.4.6)
